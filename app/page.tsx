@@ -376,6 +376,62 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Coming Soon: Phase 2 */}
+      <section className="container mx-auto px-6 py-12">
+        <div className="max-w-4xl mx-auto">
+          <div className="relative p-8 rounded-3xl overflow-hidden glass-card border-none ring-1 ring-white/20 dark:ring-white/10 group">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10 opacity-50" />
+
+            <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
+              <div className="flex-1 space-y-4">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-500 text-xs font-bold uppercase tracking-wider">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                  </span>
+                  Coming Soon: Phase 2
+                </div>
+                <h2 className="text-3xl font-bold">Chat with this Codebase</h2>
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Static portfolios are 2024. I'm currently building an <strong>interactive RAG agent</strong> that lives on this site.
+                  Soon, you'll be able to ask questions like <em>"How is the project data structured?"</em> or <em>"Explain the theme toggle implementation"</em>
+                  and get answers cited directly from the repo's source code.
+                </p>
+                <div className="flex flex-wrap gap-2 justify-center md:justify-start pt-2">
+                  <span className="px-3 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-muted-foreground font-mono">Vercel AI SDK</span>
+                  <span className="px-3 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-muted-foreground font-mono">OpenAI</span>
+                  <span className="px-3 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-muted-foreground font-mono">Vector Search</span>
+                </div>
+              </div>
+
+              {/* Visual Placeholder */}
+              <div className="shrink-0 relative w-full md:w-64 h-48 rounded-xl bg-black/40 border border-white/10 overflow-hidden font-mono text-xs p-4 text-green-400/80 shadow-2xl">
+                <div className="absolute top-0 left-0 right-0 h-6 bg-white/5 flex items-center px-3 gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
+                </div>
+                <div className="mt-4 space-y-2 opacity-70">
+                  <div className="flex gap-2">
+                    <span className="text-blue-400">user:</span>
+                    <span>Explain the architecture...</span>
+                  </div>
+                  <div className="flex gap-2">
+                    <span className="text-purple-400">agent:</span>
+                    <span>Scanning /lib/projects.ts...</span>
+                  </div>
+                  <div className="typing-indicator flex gap-1 pt-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-bounce" style={{ animationDelay: '0ms' }} />
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-bounce" style={{ animationDelay: '150ms' }} />
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-bounce" style={{ animationDelay: '300ms' }} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer CTA */}
       <section className="container mx-auto px-6 py-16 pb-32">
         <div className="max-w-4xl mx-auto text-center space-y-6">
