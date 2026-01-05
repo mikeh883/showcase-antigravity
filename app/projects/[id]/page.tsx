@@ -88,8 +88,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <div className="p-6 rounded-xl bg-green-500/10 border border-green-500/20">
               <div className="flex items-center justify-between flex-wrap gap-4">
                 <div>
-                  <h3 className="font-semibold text-lg mb-1 text-green-600 dark:text-green-400">Live Production Deployment</h3>
-                  <p className="text-muted-foreground text-sm">View the application in action</p>
+                  <h3 className="font-semibold text-lg mb-1 text-green-600 dark:text-green-400">Live Concept Site</h3>
+                  <p className="text-muted-foreground text-sm">Experience the working prototype</p>
                 </div>
                 <a
                   href={project.demoUrl}
@@ -97,7 +97,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white hover:bg-green-500 rounded-lg font-semibold transition-all shadow-lg shadow-green-900/20"
                 >
-                  Visit Live Site
+                  Launch Concept Site
                   <ExternalLink className="w-5 h-5" />
                 </a>
               </div>

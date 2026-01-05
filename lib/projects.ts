@@ -147,6 +147,7 @@ export const projects: Project[] = [
       "API proxy pattern for corporate firewall bypass",
       "Multi-source configuration (env vars, localStorage, server)"
     ],
+    demoUrl: "https://recon.mikeholloway.dev",
     status: "working-prototype",
     maturityRating: 7.5
   },
