@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Inter } from "next/font/google";
 import { Navigation } from "@/components/Navigation";
 import { ThemeProvider } from "@/components/theme-provider";
+import { ChatWidget } from "@/components/ChatWidget";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -34,6 +35,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navigation />
+          <ChatWidget />
           {children}
         </ThemeProvider>
       </body>
