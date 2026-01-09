@@ -11,6 +11,7 @@ export default function Home() {
   const tier2 = getTier2Projects();
   const tier4 = getTier4Projects();
   const nexusInsight = projects.find(p => p.id === "nexus-insight");
+  const productIntel = projects.find(p => p.id === "productintel-agents");
 
   const container = {
     hidden: { opacity: 0 },
@@ -285,7 +286,62 @@ export default function Home() {
             </motion.div>
           )}
 
-          {/* Stop 4: The Breadth */}
+          {/* Stop 4: The Innovation */}
+          {productIntel && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="relative pl-8 border-l-2 border-orange-400/30"
+            >
+              <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-orange-500 flex items-center justify-center text-xs font-bold text-white">
+                4
+              </div>
+              <div className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <FlaskConical className="w-6 h-6 text-orange-400" />
+                  <h2 className="text-2xl font-bold">The Innovation</h2>
+                </div>
+
+                <div className="p-8 rounded-3xl glass-card relative overflow-hidden border-orange-500/20">
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-50" />
+                  <div className="relative z-10 space-y-6">
+                    <div>
+                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-600 dark:text-orange-400 text-xs font-semibold mb-3">
+                        Experimental • Novel Concept
+                      </div>
+                      <h3 className="text-3xl font-bold mb-2">{productIntel.name}</h3>
+                      <p className="text-orange-600 dark:text-orange-400 text-lg font-medium">{productIntel.tagline}</p>
+                    </div>
+
+                    <p className="text-muted-foreground leading-relaxed">
+                      While EasyComm showcases production-grade sophistication, ProductIntel-Agents explores cutting-edge
+                      AI architecture: <strong className="text-orange-600 dark:text-orange-400">domain-specialized AI agent teams</strong> with industry expertise.
+                    </p>
+
+                    <div className="p-4 rounded-xl bg-background/50 border border-white/10 backdrop-blur-sm">
+                      <p className="text-sm">
+                        Instead of one generic AI, you get a <strong>FinTech compliance expert</strong>, a <strong>Healthcare specialist</strong>, and an
+                        <strong> E-commerce optimizer</strong>—all working together.
+                      </p>
+                    </div>
+
+                    <div className="pt-2">
+                      <Link
+                        href={`/projects/${productIntel.id}/deep-dive`}
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-orange-600 hover:bg-orange-500 text-white rounded-xl font-semibold transition-all"
+                      >
+                        Explore the Innovation
+                        <ArrowRight className="w-5 h-5" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* Stop 5: The Breadth */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -293,7 +349,7 @@ export default function Home() {
             className="relative pl-8 border-l-2 border-primary/30"
           >
             <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center text-xs font-bold text-white">
-              4
+              5
             </div>
             <div className="space-y-6">
               <div className="flex items-center gap-3">
@@ -301,7 +357,7 @@ export default function Home() {
                 <h2 className="text-2xl font-bold">The Breadth</h2>
               </div>
               <p className="text-foreground/70 text-lg">
-                That's just one project. Here are {tier2.length} more sophisticated systems demonstrating
+                That's just three projects. Here are {tier2.length} more sophisticated systems demonstrating
                 different capabilities:
               </p>
 
@@ -333,7 +389,7 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Stop 5: The Skills */}
+          {/* Stop 6: The Skills */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -341,7 +397,7 @@ export default function Home() {
             className="relative pl-8 border-l-2 border-primary/30"
           >
             <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center text-xs font-bold text-white">
-              5
+              6
             </div>
             <div className="space-y-6">
               <div className="flex items-center gap-3">
