@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Rocket, Database, Brain, Wallet, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, Rocket, Database, Brain, Wallet, Sparkles, CheckCircle2, Users, Target, Shield, Calendar, Map, Zap } from "lucide-react";
 import { ApprenticeProvider } from "@/components/nexus-insight/context/ApprenticeContext";
 import { AppShell } from "@/components/nexus-insight/layout/AppShell";
 import { projects } from "@/lib/projects";
@@ -157,6 +157,42 @@ export default function NexusInsightPage() {
                 </div>
             </section>
 
+            {/* Value Proposition */}
+            <section className="container mx-auto px-6 py-12 bg-slate-50/50 dark:bg-white/5">
+                <div className="max-w-5xl mx-auto">
+                    <h2 className="text-3xl font-bold mb-12 text-center">Value for the Organization</h2>
+                    <div className="grid md:grid-cols-3 gap-8">
+                        <div className="space-y-4">
+                            <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 border border-blue-500/20">
+                                <Target className="w-6 h-6" />
+                            </div>
+                            <h3 className="text-xl font-bold">For Analysts</h3>
+                            <p className="text-muted-foreground leading-relaxed">
+                                Reduces repetitive manual reporting by learning preferences (e.g., &quot;Always exclude intercompany transfers for Midwest region&quot;).
+                            </p>
+                        </div>
+                        <div className="space-y-4">
+                            <div className="w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 border border-purple-500/20">
+                                <Users className="w-6 h-6" />
+                            </div>
+                            <h3 className="text-xl font-bold">For Executives</h3>
+                            <p className="text-muted-foreground leading-relaxed">
+                                Provides proactive &quot;Monday Morning&quot; briefings without needing to ask, surfacing anomalies and key metrics automatically.
+                            </p>
+                        </div>
+                        <div className="space-y-4">
+                            <div className="w-12 h-12 rounded-lg bg-green-500/10 flex items-center justify-center text-green-400 border border-green-500/20">
+                                <Shield className="w-6 h-6" />
+                            </div>
+                            <h3 className="text-xl font-bold">For the Enterprise</h3>
+                            <p className="text-muted-foreground leading-relaxed">
+                                Captures tribal knowledge. As the AI learns one analyst&apos;s heuristics, that knowledge is institutionalized and can be shared or audited.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Feature Walkthrough */}
             <section className="container mx-auto px-6 py-12 pb-24">
                 <div className="max-w-5xl mx-auto space-y-12">
@@ -168,9 +204,17 @@ export default function NexusInsightPage() {
                                 <Wallet className="w-6 h-6" />
                             </div>
                             <h3 className="font-bold text-lg mb-2">Skill Wallet</h3>
-                            <p className="text-muted-foreground text-sm">
-                                A visual ledger of every heuristic and preference the AI has learned. Users can audit, edit, or delete these skills, ensuring trust and control.
+                            <p className="text-muted-foreground text-sm mb-4">
+                                A visual ledger of learned heuristics.
                             </p>
+                            <ul className="text-xs space-y-2 text-foreground/70 bg-black/20 p-3 rounded-lg">
+                                <li className="flex gap-2">
+                                    <span className="text-green-400">✓</span> Validation Rule #1
+                                </li>
+                                <li className="flex gap-2">
+                                    <span className="text-green-400">✓</span> Monday Recon (80% Conf)
+                                </li>
+                            </ul>
                         </div>
 
                         <div className="p-6 rounded-xl glass-card">
@@ -178,9 +222,12 @@ export default function NexusInsightPage() {
                                 <Database className="w-6 h-6" />
                             </div>
                             <h3 className="font-bold text-lg mb-2">Implicit Signals</h3>
-                            <p className="text-muted-foreground text-sm">
-                                The system tracks non-verbal cues. If you always export to CSV on Mondays, it learns to pro-actively offer that export next Monday.
+                            <p className="text-muted-foreground text-sm mb-4">
+                                Tracks non-verbal cues to predict needs.
                             </p>
+                            <div className="text-xs text-foreground/70 bg-black/20 p-3 rounded-lg italic">
+                                &quot;User always exports to Excel on Mondays at 9am -&gt; Proactively offer export.&quot;
+                            </div>
                         </div>
 
                         <div className="p-6 rounded-xl glass-card">
@@ -189,8 +236,76 @@ export default function NexusInsightPage() {
                             </div>
                             <h3 className="font-bold text-lg mb-2">Logic Inspector</h3>
                             <p className="text-muted-foreground text-sm">
-                                Open the "brain" to see exactly why a decision was made. Was it a hardcoded rule or a learned preference? Transparency is key.
+                                Open the &quot;brain&quot; to see exactly why a decision was made. Was it a hardcoded rule or a learned preference? Transparency is key.
                             </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Roadmap */}
+            <section className="container mx-auto px-6 py-12 pb-32">
+                <div className="max-w-5xl mx-auto">
+                    <div className="flex items-center gap-3 mb-8">
+                        <Map className="w-8 h-8 text-muted-foreground" />
+                        <h2 className="text-3xl font-bold">Roadmap</h2>
+                    </div>
+
+                    <div className="space-y-8">
+                        <div className="relative pl-8 border-l border-border/50">
+                            <div className="absolute left-[-5px] top-0 w-2.5 h-2.5 rounded-full bg-blue-500" />
+                            <h3 className="text-xl font-bold mb-4 flex items-center gap-3">
+                                <span className="text-blue-400">Near Term (Q2)</span>
+                            </h3>
+                            <ul className="space-y-3 text-foreground/80">
+                                <li className="flex gap-3">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-foreground/30 mt-2.5" />
+                                    <span><strong>Natural Language Querying (NLQ):</strong> Ask &quot;Why is Detroit lagging?&quot; for deep-dive analysis.</span>
+                                </li>
+                                <li className="flex gap-3">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-foreground/30 mt-2.5" />
+                                    <span><strong>Heuristic Sharing:</strong> Share &quot;Sales Skill Packs&quot; between analysts.</span>
+                                </li>
+                                <li className="flex gap-3">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-foreground/30 mt-2.5" />
+                                    <span><strong>Correction Workflow:</strong> Debug logic in natural language (e.g., &quot;Only exclude transfers for external reports&quot;).</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className="relative pl-8 border-l border-border/50">
+                            <div className="absolute left-[-5px] top-0 w-2.5 h-2.5 rounded-full bg-purple-500" />
+                            <h3 className="text-xl font-bold mb-4 flex items-center gap-3">
+                                <span className="text-purple-400">Mid Term (Q3)</span>
+                            </h3>
+                            <ul className="space-y-3 text-foreground/80">
+                                <li className="flex gap-3">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-foreground/30 mt-2.5" />
+                                    <span><strong>ERP Integration:</strong> Live connectors to NetSuite/SAP/Salesforce.</span>
+                                </li>
+                                <li className="flex gap-3">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-foreground/30 mt-2.5" />
+                                    <span><strong>Anomaly Detection V2:</strong> Semantic understanding of seasonal variance.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className="relative pl-8 border-l border-border/50">
+                            <div className="absolute left-[-5px] top-0 w-2.5 h-2.5 rounded-full bg-yellow-500" />
+                            <h3 className="text-xl font-bold mb-4 flex items-center gap-3">
+                                <span className="text-yellow-400">Long Term Vision</span>
+                                <Rocket className="w-4 h-4 text-yellow-400" />
+                            </h3>
+                            <ul className="space-y-3 text-foreground/80">
+                                <li className="flex gap-3">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-foreground/30 mt-2.5" />
+                                    <span><strong>&quot;Journeyman&quot; Mode:</strong> AI graduates to training other analysts.</span>
+                                </li>
+                                <li className="flex gap-3">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-foreground/30 mt-2.5" />
+                                    <span><strong>Enterprise &quot;SME&quot; Graph:</strong> Auto-mapping organizational knowledge.</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>

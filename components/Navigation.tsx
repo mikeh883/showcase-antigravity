@@ -72,10 +72,10 @@ export function Navigation() {
             href="mailto:mdholloway@gmail.com"
             className="hidden sm:flex px-4 py-2 ml-1 text-sm font-semibold text-white bg-primary hover:bg-primary/90 rounded-full shadow-lg shadow-primary/20 transition-all hover:scale-105 active:scale-95"
           >
-            Hire Me
+            Contact Me
           </a>
         </div>
       </motion.nav>
-    </header>
+    </header >
   );
 }

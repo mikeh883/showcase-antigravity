@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Code2, Rocket, Sparkles, Terminal, Activity, Layers, Clock, Target, FlaskConical, Zap } from "lucide-react";
-import { getTotalStats, getFlagshipProject, getTier2Projects, getTier4Projects } from "@/lib/projects";
+import { ArrowLeft, ArrowRight, Code2, Rocket, Sparkles, Terminal, Activity, Layers, Clock, Target, FlaskConical, Zap, Brain } from "lucide-react";
+import { getTotalStats, getFlagshipProject, getTier2Projects, getTier4Projects, projects } from "@/lib/projects";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
   const flagship = getFlagshipProject();
   const tier2 = getTier2Projects();
   const tier4 = getTier4Projects();
-  const productIntel = tier4.find(p => p.id === "productintel-agents");
+  const nexusInsight = projects.find(p => p.id === "nexus-insight");
 
   const container = {
     hidden: { opacity: 0 },
@@ -231,51 +231,51 @@ export default function Home() {
           )}
 
           {/* Stop 3: The Innovation */}
-          {productIntel && (
+          {nexusInsight && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="relative pl-8 border-l-2 border-orange-400/30"
+              className="relative pl-8 border-l-2 border-blue-400/30"
             >
-              <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-orange-500 flex items-center justify-center text-xs font-bold text-white">
+              <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-xs font-bold text-white">
                 3
               </div>
               <div className="space-y-6">
                 <div className="flex items-center gap-3">
-                  <FlaskConical className="w-6 h-6 text-orange-400" />
-                  <h2 className="text-2xl font-bold">The Innovation</h2>
+                  <Brain className="w-6 h-6 text-blue-400" />
+                  <h2 className="text-2xl font-bold">The Breakthrough</h2>
                 </div>
 
-                <div className="p-8 rounded-3xl glass-card relative overflow-hidden border-orange-500/20">
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-50" />
+                <div className="p-8 rounded-3xl glass-card relative overflow-hidden border-blue-500/20">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-50" />
                   <div className="relative z-10 space-y-6">
                     <div>
-                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-600 dark:text-orange-400 text-xs font-semibold mb-3">
-                        Experimental • Novel Concept
+                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-600 dark:text-blue-400 text-xs font-semibold mb-3">
+                        <Sparkles className="w-3 h-3" />
+                        Novel Concept • Agentic AI
                       </div>
-                      <h3 className="text-3xl font-bold mb-2">{productIntel.name}</h3>
-                      <p className="text-orange-600 dark:text-orange-400 text-lg font-medium">{productIntel.tagline}</p>
+                      <h3 className="text-3xl font-bold mb-2">{nexusInsight.name}</h3>
+                      <p className="text-blue-600 dark:text-blue-400 text-lg font-medium">{nexusInsight.tagline}</p>
                     </div>
 
                     <p className="text-muted-foreground leading-relaxed">
-                      While EasyComm showcases production-grade sophistication, ProductIntel-Agents explores cutting-edge
-                      AI architecture: <strong className="text-orange-600 dark:text-orange-400">domain-specialized AI agent teams</strong> with industry expertise.
+                      While EasyComm showcases enterprise scale, Nexus Insight represents a paradigm shift:
+                      <strong className="text-blue-600 dark:text-blue-400"> An AI that learns business logic</strong> instead of just executing hardcoded rules.
                     </p>
 
                     <div className="p-4 rounded-xl bg-background/50 border border-white/10 backdrop-blur-sm">
                       <p className="text-sm">
-                        Instead of one generic AI, you get a <strong>FinTech compliance expert</strong>, a <strong>Healthcare specialist</strong>, and an
-                        <strong> E-commerce optimizer</strong>—all working together.
+                        Featuring an <strong>"Apprentice Mode"</strong> that observes your actions to build a <strong>Skill Wallet</strong> of heuristics—automating workflows without a single line of new code.
                       </p>
                     </div>
 
                     <div className="pt-2">
                       <Link
-                        href={`/projects/${productIntel.id}/deep-dive`}
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-orange-600 hover:bg-orange-500 text-white rounded-xl font-semibold transition-all"
+                        href={`/projects/${nexusInsight.id}`}
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-semibold transition-all"
                       >
-                        Explore the Innovation
+                        Explore the Apprentice
                         <ArrowRight className="w-5 h-5" />
                       </Link>
                     </div>

@@ -176,7 +176,7 @@ export const projects: Project[] = [
     id: "nexus-insight",
     name: "Nexus Insight",
     tagline: "Apprentice AI for Business Logic",
-    description: "An AI apprentice that learns business logic and user preferences by observing interactions. Features a 'Skill Wallet' and 'Implicit Signals Log' that adapts to user behavior in real-time.",
+    description: "An AI apprentice that learns business logic and user preferences by observing interactions. Features a 'Skill Wallet' and 'Implicit Signals Log' that adapts to user behavior in real-time. Includes 'Negative Logic' learning (what NOT to do) and Temporal Triggers.",
     tier: 4,
     linesOfCode: 2400,
     features: 8,
@@ -185,10 +185,10 @@ export const projects: Project[] = [
       "Apprentice Mode: AI observes user corrections to learn domain rules",
       "Skill Wallet: Visual representation of learned capabilities",
       "Implicit Signals Log: Tracking non-verbal user preferences",
-      "Proactive Insights: AI suggests actions based on learned patterns"
+      "Proactive Insights: AI suggests actions based on learned patterns (e.g., 'Monday Recon')"
     ],
-    status: "concept-validation",
-    maturityRating: 6.0
+    status: "working-prototype",
+    maturityRating: 7.0
   }
 ];
 
