@@ -45,13 +45,13 @@ export default function Home() {
           </motion.div>
 
           <motion.h1 variants={item} className="text-5xl md:text-7xl font-bold text-balance tracking-tight">
-            From Concept to{" "}
+            Challenging the{" "}
             <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-500">
-              Enterprise
+              Status Quo
               <span className="absolute -inset-1 blur-2xl opacity-20 bg-primary rounded-full" />
             </span>
             <br />
-            Building Production AI Products
+            Creating innovative new ways to build and prototype advanced AI
           </motion.h1>
 
           <motion.p variants={item} className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto text-balance font-light">
