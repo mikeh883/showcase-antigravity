@@ -3,16 +3,7 @@ import { streamText } from "ai";
 import { Pinecone } from "@pinecone-database/pinecone";
 import OpenAI from "openai";
 
-// Initialize OpenAI client for embeddings (separate from AI SDK for now to keep it simple or reuse)
-const openaiClient = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-});
-
-const pc = new Pinecone({
-    apiKey: process.env.PINECONE_API_KEY!,
-});
-
-const indexName = process.env.PINECONE_INDEX_NAME!;
+// Clients will be initialized inside the handler to prevent build-time errors if env vars are missing
 
 export async function POST(req: Request) {
     const { messages } = await req.json();
@@ -20,6 +11,15 @@ export async function POST(req: Request) {
     // 1. Get the last user message
     const lastMessage = messages[messages.length - 1];
     const userQuery = lastMessage.content;
+
+    // Initialize clients
+    const openaiClient = new OpenAI({
+        apiKey: process.env.OPENAI_API_KEY,
+    });
+    const pc = new Pinecone({
+        apiKey: process.env.PINECONE_API_KEY!,
+    });
+    const indexName = process.env.PINECONE_INDEX_NAME!;
 
     // 2. Generate Embedding for the query
     const embeddingResponse = await openaiClient.embeddings.create({
